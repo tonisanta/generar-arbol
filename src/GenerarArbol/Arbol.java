@@ -41,18 +41,6 @@ public class Arbol {
         return n;
     }
 
-    public void imprimirInorden() {
-        this.imprimirInorden(this.raiz);
-    }
-
-    private void imprimirInorden(Nodo nodo) {
-        if (nodo == null)
-            return;
-        imprimirInorden(nodo.getHijoIz());
-        System.out.print(nodo.getItem() + " ");
-        imprimirInorden(nodo.getHijoDer());
-    }
-
     public void imprimirPostorden() {
         this.imprimirPostorden(this.raiz);
     }
@@ -64,7 +52,5 @@ public class Arbol {
         imprimirPostorden(nodo.getHijoDer());
         System.out.print(nodo.getItem() + " ");
     }
-
-
 }
 
