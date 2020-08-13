@@ -1,28 +1,33 @@
 package GenerarArbol;
 
+import Excepciones.RecorridoInvalidoException;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Arbol {
     private Nodo raiz;
     private int indice;
     private HashMap<String, Integer> hash;
+    private ArrayList<String> postorden;
 
     /**
      * Construir árbol a partir de su recorrido preorden e inorden
      * @param preorden array strings
      * @param inorden array strings
      */
-    public Arbol(String[] preorden, String[] inorden) {
+    public Arbol(String[] preorden, String[] inorden) throws RecorridoInvalidoException {
         if (preorden.length != inorden.length) {
-            System.out.println("Ambos recorridos deben tener el mismo número de elementos");
-            return;
+            throw new RecorridoInvalidoException("Ambos recorridos deben tener el mismo número de elementos");
         }
 
         this.indice = 0;
+        this.postorden = new ArrayList<>();
         this.hash = new HashMap<>();
         for (int i = 0; i < inorden.length; i++) {
             hash.put(inorden[i], i);
         }
+
         this.raiz = generarArbol(preorden, 0, preorden.length - 1);
     }
 
@@ -41,16 +46,18 @@ public class Arbol {
         return n;
     }
 
-    public void imprimirPostorden() {
-        this.imprimirPostorden(this.raiz);
+    public ArrayList<String> getPostorden(){
+        this.getPostorden(this.raiz);
+        return postorden;
     }
 
-    private void imprimirPostorden(Nodo nodo) {
+
+    private void getPostorden(Nodo nodo) {
         if (nodo == null)
             return;
-        imprimirPostorden(nodo.getHijoIz());
-        imprimirPostorden(nodo.getHijoDer());
-        System.out.print(nodo.getItem() + " ");
+        getPostorden(nodo.getHijoIz());
+        getPostorden(nodo.getHijoDer());
+        postorden.add(nodo.getItem());
     }
 }
 
