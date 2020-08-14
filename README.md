@@ -11,9 +11,9 @@ siguiente instrucción:
 cd (directorio del proyecto)
 java -jar out/artifacts/GenerarArbol_jar/GenerarArbol.jar  
 ``` 
-![introducirDatos](/home/toni/IdeaProjects/generar-arbol/pictures/introducirDatos.png)
+![introducirDatos](pictures/introducirDatos.png)
 
-![resultados](/home/toni/IdeaProjects/generar-arbol/pictures/resultados.png)
+![resultados](pictures/resultados.png)
 
 
 ## Consideraciones
