@@ -3,7 +3,7 @@ package GenerarArbol;
 import Excepciones.RecorridoInvalidoException;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.Font;
 import java.util.ArrayList;
 
 public class UserInterface extends JFrame {
