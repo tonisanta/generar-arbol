@@ -1,7 +1,7 @@
 # Generar recorrido postorden
 Este programa permite generar un árbol a partir de sus recorridos de preorden 
-e inorden. Una vez generado el árbol a través de un algoritmo **recursivo** 
-podemos obtener los valores de su recorrido **postorden**.
+e inorden. Se genera el árbol con un algoritmo **recursivo** para luego poder
+obtener los valores de su recorrido **postorden**.
 
 ## Uso
 Los elementos se deben introducir **separados por comas** `,` Para ejecutar esta

@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.util.ArrayList;
 
 public class UserInterface extends JFrame {
-
     private JLabel jlTitulo;
     private JLabel jlpreorden;
     private JLabel jlinorden;
@@ -16,10 +15,6 @@ public class UserInterface extends JFrame {
     private JTextField jtinorden;
     private JButton jbGenerar;
 
-    /**
-     * Por definición las claves de un árbol deben ser únicas, tests unitarios JUNIT, test coverage...
-     * @param args
-     */
     public static void main(String[] args) {
         UserInterface ui = new UserInterface();
     }
