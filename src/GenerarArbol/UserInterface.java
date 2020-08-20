@@ -23,6 +23,10 @@ public class UserInterface extends JFrame {
         initComponents();
     }
 
+    /**
+     * Obtenemos los datos introducidos en los JTextField como tokens separados a partir de una expresión regular.
+     * Concretamente (espacio)* , (espacio)*
+     */
     private void generarPostorden() {
         String[] preorden = jtpreorden.getText().split("\\s*,\\s*");
         String[] inorden = jtinorden.getText().split("\\s*,\\s*");
@@ -30,14 +34,15 @@ public class UserInterface extends JFrame {
         try {
             Arbol arbol = new Arbol(preorden, inorden);
             ArrayList<String> postorden = arbol.getPostorden();
-            String p = postorden.toString();
-            JOptionPane.showMessageDialog(this, p, "Recorrido postorden", JOptionPane.INFORMATION_MESSAGE);
-
+            JOptionPane.showMessageDialog(this, postorden.toString(), "Recorrido postorden", JOptionPane.INFORMATION_MESSAGE);
         } catch (RecorridoInvalidoException ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
+    /**
+     * Inicialización de los componentes gráficos y ActionListener
+     */
     private void initComponents() {
         jlTitulo = new JLabel("Generar recorrido postorden");
         jlpreorden = new JLabel("Preorden:");

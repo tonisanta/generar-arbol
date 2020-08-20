@@ -31,6 +31,13 @@ public class Arbol {
         this.raiz = generarArbol(preorden, 0, preorden.length - 1);
     }
 
+    /**
+     * Algoritmo recursivo que genera el árbol a partir de los recorridos introducidos
+     * @param preorden
+     * @param indiceInicio
+     * @param indiceFinal
+     * @return Devuelve el Nodo raíz
+     */
     private Nodo generarArbol(String[] preorden, int indiceInicio, int indiceFinal) {
         if (indiceInicio > indiceFinal)
             return null;
@@ -50,7 +57,6 @@ public class Arbol {
         this.getPostorden(this.raiz);
         return postorden;
     }
-
 
     private void getPostorden(Nodo nodo) {
         if (nodo == null)
